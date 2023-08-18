@@ -6,11 +6,9 @@ namespace contactManagerAPI.Models
         public required string FirstName { get; set; }
         public string? MiddleName { get; set; }
         public string? LastName { get; set; }
-        public string? ContactNumber { get; set; }
-        public required string Email { get; set; }
-        public string? Address { get; set; }
+        public required string EmailAddress { get; set; }
         public required string Username { get; set; }
-        public required string Password { get; set; }
+        public required string HashedPassword { get; set; }
         public required int RoleID { get; set; }
         public int? AddedBy { get; set; }
         public DateTime AddedOn { get; set; }

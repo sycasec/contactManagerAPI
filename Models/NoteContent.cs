@@ -1,10 +1,10 @@
 namespace contactManagerAPI
 {
-    public class Notes
+    public class NoteContent
     {
         public int ID { get; set; }
-        public required int UserID { get; set; }
-        public required int ContactID { get; set; }
+        public required int NoteID { get; set; }
+        public required string Contents { get; set; }
         public int AddedBy { get; set; }
         public DateTime AddedOn { get; set; }
         public int UpdatedBy { get; set; }

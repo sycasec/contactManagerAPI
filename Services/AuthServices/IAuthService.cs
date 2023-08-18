@@ -1,11 +1,12 @@
-namespace contactManagerAPI.AuthServices
+using contactManagerAPI.DTO;
+
+namespace contactManagerAPI.Services.AuthServices
 {
     public interface IAuthService
     {
-        Task<SvcResponse<string>> AuthenticateUser(string username, string password);
-        Task<SvcResponse<string>> CreateUser(User newUser);
-        Task<SvcResponse<string>> DeleteUserByUsername(string username);
-        Task<SvcResponse<string>> UpdateUserByUsername(string username);
-
+        Task<SvcResponse<string>> AuthenticateUser(UserAuthDTO req);
+        Task<SvcResponse<string>> CreateUser(UserDTO req);
+        Task<SvcResponse<string>> DeactivateUser(UserAuthDTO req);
+        Task<SvcResponse<string>> UpdateUser(UserDTO req);
     }
 }

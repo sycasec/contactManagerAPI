@@ -1,6 +1,6 @@
 namespace contactManagerAPI.Models
 {
-    public class UserLogin
+    public class Login
     {
         public int ID { get; set; }
         public required int UserID { get; set; }
