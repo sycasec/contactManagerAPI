@@ -1,7 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 using BCrypt.Net;
 using contactManagerAPI.DTO;
-using contactManagerAPI.UserRepository;
+using contactManagerAPI.Services.UserRepository;
 
 namespace contactManagerAPI.Services.AuthServices
 {

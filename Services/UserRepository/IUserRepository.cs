@@ -1,6 +1,6 @@
 using contactManagerAPI.DTO;
 
-namespace contactManagerAPI.UserRepository
+namespace contactManagerAPI.Services.UserRepository
 {
     public interface IUserRepository
     {
