@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/sycasec/Projects/contactManagerAPI/contactManagerAPI.csproj": {}
+    "c:\\Users\\kyle\\projects\\contactManagerAPI\\contactManagerAPI.csproj": {}
   },
   "projects": {
-    "/home/sycasec/Projects/contactManagerAPI/contactManagerAPI.csproj": {
+    "c:\\Users\\kyle\\projects\\contactManagerAPI\\contactManagerAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/sycasec/Projects/contactManagerAPI/contactManagerAPI.csproj",
+        "projectUniqueName": "c:\\Users\\kyle\\projects\\contactManagerAPI\\contactManagerAPI.csproj",
         "projectName": "contactManagerAPI",
-        "projectPath": "/home/sycasec/Projects/contactManagerAPI/contactManagerAPI.csproj",
-        "packagesPath": "/home/sycasec/.nuget/packages/",
-        "outputPath": "/home/sycasec/Projects/contactManagerAPI/obj/",
+        "projectPath": "c:\\Users\\kyle\\projects\\contactManagerAPI\\contactManagerAPI.csproj",
+        "packagesPath": "C:\\Users\\kyle\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\kyle\\projects\\contactManagerAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/sycasec/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\kyle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -93,6 +99,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.32.1, )"
             }
           },
           "imports": [
@@ -106,12 +116,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.9, 7.0.9]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -120,7 +124,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.109/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

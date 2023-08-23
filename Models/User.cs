@@ -1,7 +1,7 @@
 namespace contactManagerAPI.Models
 {
     public class User
-    {
+    { 
         public int ID { get; set; }
         public required string FirstName { get; set; }
         public string? MiddleName { get; set; }

@@ -1,0 +1,5 @@
+{
+    "NewLineForElse": false,
+    "NewLineForCatch": false,
+    "NewLineForFinally": false,
+}

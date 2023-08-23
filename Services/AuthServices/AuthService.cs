@@ -14,27 +14,38 @@ namespace contactManagerAPI.Services.AuthServices
             _userRepository = userRepository;
         }
 
+        public async Task<SvcResponse<IEnumerable<UserDTO>>> GetAllUsers()
+        {
+            var Users = await _userRepository.GetAllUsers();
+            var res = new SvcResponse<IEnumerable<UserDTO>>
+            {
+                Data = Users,
+                Error = Users is null ? "No users in database" : ""
+            };
+            return res;
+        }
+
         public async Task<SvcResponse<string>> AuthenticateUser(UserAuthDTO req)
         {
             var res = new SvcResponse<string>();
             User? userData;
-            if (req.Username == "")
-            {
-                userData = await _userRepository.GetUserByEmail(req.EmailAddress);
-            }
-            else
-            {
-                userData = await _userRepository.GetUserByUsername(req.Username);
-            }
 
-            if (userData == null || !BCrypt.Net.BCrypt.Verify(req.Password, userData.HashedPassword))
+            _ = req.EmailAddress is not null
+                ? userData = await _userRepository.GetUserByEmail(req.EmailAddress)
+                : userData = await _userRepository.GetUserByUsername(req.Username!);
+
+            if (
+                userData == null || !BCrypt.Net.BCrypt.Verify(req.Password, userData.HashedPassword)
+            )
             {
                 res.Success = false;
                 res.Error = "Bad Request";
                 res.Message = "User does not exist or wrong password was entered.";
                 res.Data = "User does not exist or wrong password was entered.";
             }
-            else if (userData != null && BCrypt.Net.BCrypt.Verify(req.Password, userData.HashedPassword))
+            else if (
+                userData != null && BCrypt.Net.BCrypt.Verify(req.Password, userData.HashedPassword)
+            )
             {
                 res.Message = "User login success!";
                 res.Data = "User login success!";
@@ -61,8 +72,10 @@ namespace contactManagerAPI.Services.AuthServices
             User? userData = await _userRepository.GetUserByUsername(req.Username);
             if (BCrypt.Net.BCrypt.Verify(userData.HashedPassword, req.Password))
             {
-                res.Data = "User has been deactivated. Account will no longer be accessible in 30 days.";
-                res.Message = "User has been deactivated. Account will no longer be accessible in 30 days.";
+                res.Data =
+                    "User has been deactivated. Account will no longer be accessible in 30 days.";
+                res.Message =
+                    "User has been deactivated. Account will no longer be accessible in 30 days.";
                 _ = _userRepository.DeleteUserByUsername(req.Username);
             }
             else
@@ -86,6 +99,5 @@ namespace contactManagerAPI.Services.AuthServices
             }
             return res;
         }
-
     }
 }

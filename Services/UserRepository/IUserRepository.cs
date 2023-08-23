@@ -7,10 +7,10 @@ namespace contactManagerAPI.Services.UserRepository
         Task<User?> GetUserByUsername(string username);
         Task<User?> GetUserByEmail(string email);
         Task<bool> CreateUser(UserDTO req);
+        Task<bool> UserExists(UserAuthDTO req);
         Task<bool> DeleteUserByUsername(string username);
         Task<bool> DeleteUserByID(int ID);
         Task<bool> UpdateUser(UserDTO req);
-        Task<bool> UpdateUserByID(int ID, User user);
-        Task<IEnumerable<User>> GetAllUsers();
+        Task<IEnumerable<UserDTO>> GetAllUsers();
     }
 }
