@@ -1,6 +1,7 @@
 using System.Security.Cryptography.X509Certificates;
 using BCrypt.Net;
 using contactManagerAPI.DTO;
+using contactManagerAPI.Services.AuditServices;
 using contactManagerAPI.Services.UserRepository;
 
 namespace contactManagerAPI.Services.AuthServices
@@ -8,10 +9,12 @@ namespace contactManagerAPI.Services.AuthServices
     public class AuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IAuditService _auditor;
 
-        public AuthService(IUserRepository userRepository)
+        public AuthService(IUserRepository userRepository, IAuditService auditService)
         {
             _userRepository = userRepository;
+            _auditor = auditService;
         }
 
         public async Task<SvcResponse<IEnumerable<UserDTO>>> GetAllUsers()
@@ -40,15 +43,20 @@ namespace contactManagerAPI.Services.AuthServices
             {
                 res.Success = false;
                 res.Error = "Bad Request";
-                res.Message = "User does not exist or wrong password was entered.";
-                res.Data = "User does not exist or wrong password was entered.";
+                res.Message = "400";
+                await _auditor.LogEvent(0, "Login", "User", "Login Failed. ID Unknown");
             }
             else if (
                 userData != null && BCrypt.Net.BCrypt.Verify(req.Password, userData.HashedPassword)
             )
             {
-                res.Message = "User login success!";
-                res.Data = "User login success!";
+                res.Message = "200";
+                await _auditor.LogEvent(
+                    userData.ID,
+                    "Login",
+                    "User",
+                    $"Login Success, username={userData.Username}"
+                );
             }
             return res;
         }
@@ -60,9 +68,22 @@ namespace contactManagerAPI.Services.AuthServices
             if (taskSuccess)
             {
                 res.Data = "User created successfully!";
-                res.Message = "User created successfully!";
+                res.Message = "201";
+                int entityID = await _userRepository.GetUserID(req.Username!);
+                await _auditor.LogEvent(
+                    entityID,
+                    "CreateUser",
+                    "User+System",
+                    $"New User Created. username={req.Username}"
+                );
             }
-
+            else
+            {
+                res.Data = "User already exists!";
+                res.Message = "400";
+                res.Success = false;
+                res.Error = "Bad Request";
+            }
             return res;
         }
 
@@ -74,15 +95,14 @@ namespace contactManagerAPI.Services.AuthServices
             {
                 res.Data =
                     "User has been deactivated. Account will no longer be accessible in 30 days.";
-                res.Message =
-                    "User has been deactivated. Account will no longer be accessible in 30 days.";
+                res.Message = "200";
                 _ = _userRepository.DeleteUserByUsername(req.Username);
             }
             else
             {
                 res.Success = false;
                 res.Error = "Bad Request";
-                res.Message = "Wrong password was entered.";
+                res.Message = "400";
                 res.Data = "Wrong password was entered.";
             }
             return res;
@@ -95,7 +115,13 @@ namespace contactManagerAPI.Services.AuthServices
             if (taskSuccess)
             {
                 res.Data = "Update success!";
-                res.Message = "Update success!";
+                res.Message = "201";
+            }
+            else
+            {
+                res.Success = false;
+                res.Message = "400";
+                res.Error = "Bad Request";
             }
             return res;
         }

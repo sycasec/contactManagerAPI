@@ -99,3 +99,8 @@ C:\Users\kyle\projects\contactManagerAPI\obj\Debug\net7.0\refint\contactManagerA
 C:\Users\kyle\projects\contactManagerAPI\obj\Debug\net7.0\contactManagerAPI.pdb
 C:\Users\kyle\projects\contactManagerAPI\obj\Debug\net7.0\contactManagerAPI.genruntimeconfig.cache
 C:\Users\kyle\projects\contactManagerAPI\obj\Debug\net7.0\ref\contactManagerAPI.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

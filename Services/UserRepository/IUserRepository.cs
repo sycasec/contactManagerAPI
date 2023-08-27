@@ -11,6 +11,7 @@ namespace contactManagerAPI.Services.UserRepository
         Task<bool> DeleteUserByUsername(string username);
         Task<bool> DeleteUserByID(int ID);
         Task<bool> UpdateUser(UserDTO req);
+        Task<int> GetUserID(string username);
         Task<IEnumerable<UserDTO>> GetAllUsers();
     }
 }

@@ -1,4 +1,4 @@
-namespace contectManagerAPI.Models
+namespace contactManagerAPI.Models
 {
     public class Contact
     {
@@ -10,8 +10,6 @@ namespace contectManagerAPI.Models
         public string? JobRole { get; set; }
         public int? CompanyID { get; set; }
         public required string Email { get; set; }
-        public string? DeliveryAddress { get; set; }
-        public string? BillingAddress { get; set; }
         public int? AddedBy { get; set; }
         public DateTime? AddedOn { get; set; }
         public int? UpdatedBy { get; set; }

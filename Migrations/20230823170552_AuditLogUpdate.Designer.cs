@@ -12,8 +12,8 @@ using contactManagerAPI.Data;
 namespace contactManagerAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230822002741_InitialMigrate")]
-    partial class InitialMigrate
+    [Migration("20230823170552_AuditLogUpdate")]
+    partial class AuditLogUpdate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -56,6 +56,37 @@ namespace contactManagerAPI.Migrations
                     b.ToTable("Addresses");
                 });
 
+            modelBuilder.Entity("contactManagerAPI.Models.AuditLog", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Action")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Details")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("EntityID")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("EntityType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("AuditLogs");
+                });
+
             modelBuilder.Entity("contactManagerAPI.Models.ContactActivity", b =>
                 {
                     b.Property<int>("ID")
@@ -94,34 +125,6 @@ namespace contactManagerAPI.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("contactActivities");
-                });
-
-            modelBuilder.Entity("contactManagerAPI.Models.Login", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("IPAddress")
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("LogTime")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("UserAgent")
-                        .HasColumnType("text");
-
-                    b.Property<int>("UserID")
-                        .HasColumnType("integer");
-
-                    b.Property<bool>("isLogin")
-                        .HasColumnType("boolean");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Logins");
                 });
 
             modelBuilder.Entity("contactManagerAPI.Models.Organization", b =>
