@@ -16,6 +16,7 @@ namespace contactManagerAPI.Models
         public DateTime? AddedOn { get; set; }
         public int? UpdatedBy { get; set; }
         public int? UpdatedOn { get; set; }
+        public int? IsFavorite { get; set; }
         public int? IsDeleted { get; set; }
     }
 }

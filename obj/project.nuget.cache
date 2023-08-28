@@ -2,7 +2,7 @@
   "version": 2,
   "dgSpecHash": "hETYiQJpkgRkaW62g0VYGbeXQD344qml8jmQaX3DXIZ82h3iJnsGhgBaKgUm4je9uimUYcpJoCEOCHHMoSBC8Q==",
   "success": true,
-  "projectFilePath": "/home/sycasec/Projects/contactManagerAPI/contactManagerAPI.csproj",
+  "projectFilePath": "c:\\Users\\kyle\\projects\\contactManagerAPI\\contactManagerAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kyle\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\kyle\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

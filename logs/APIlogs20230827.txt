@@ -1,0 +1,632 @@
+2023-08-27 16:39:40.034 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 16:39:40.080 +08:00 [INF] Creating key {88c58968-6bb4-42fb-a39d-6580f22d1c26} with creation date 2023-08-27 08:39:40Z, activation date 2023-08-27 08:39:40Z, and expiration date 2023-11-25 08:39:40Z.
+2023-08-27 16:39:40.099 +08:00 [INF] Writing data to file 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys\key-88c58968-6bb4-42fb-a39d-6580f22d1c26.xml'.
+2023-08-27 16:39:40.406 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 16:39:40.408 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 16:39:40.409 +08:00 [INF] Hosting environment: Development
+2023-08-27 16:39:40.410 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 16:39:48.106 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/swagger/index.html - -
+2023-08-27 16:39:48.271 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/swagger/index.html - - - 200 - text/html;charset=utf-8 168.2131ms
+2023-08-27 16:39:48.500 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/swagger/v1/swagger.json - -
+2023-08-27 16:39:48.582 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 82.3062ms
+2023-08-27 16:39:57.399 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/api/Auth/All - -
+2023-08-27 16:39:57.415 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-08-27 16:39:57.421 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI)'
+2023-08-27 16:39:57.440 +08:00 [INF] Route matched with {action = "GetAllUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.Collections.Generic.IEnumerable`1[contactManagerAPI.DTO.UserDTO]]]] GetAllUsers() on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 16:39:59.088 +08:00 [INF] Executing OkObjectResult, writing value of type 'contactManagerAPI.Models.SvcResponse`1[[System.Collections.Generic.IEnumerable`1[[contactManagerAPI.DTO.UserDTO, contactManagerAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-08-27 16:39:59.106 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI) in 1659.0402ms
+2023-08-27 16:39:59.110 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI)'
+2023-08-27 16:39:59.124 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/api/Auth/All - - - 200 - application/json;+charset=utf-8 1725.4529ms
+2023-08-27 16:42:49.166 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5018/api/Auth/register application/json 386
+2023-08-27 16:42:49.170 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Register (contactManagerAPI)'
+2023-08-27 16:42:49.188 +08:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Register(contactManagerAPI.DTO.UserDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 16:42:49.228 +08:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2023-08-27 16:42:49.232 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Register (contactManagerAPI) in 39.2733ms
+2023-08-27 16:42:49.234 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Register (contactManagerAPI)'
+2023-08-27 16:42:49.236 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5018/api/Auth/register application/json 386 - 400 - application/problem+json;+charset=utf-8 69.5263ms
+2023-08-27 16:43:40.242 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5018/api/Auth/register application/json 385
+2023-08-27 16:43:40.244 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Register (contactManagerAPI)'
+2023-08-27 16:43:40.247 +08:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Register(contactManagerAPI.DTO.UserDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 16:43:40.778 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Register (contactManagerAPI) in 526.0341ms
+2023-08-27 16:43:40.779 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Register (contactManagerAPI)'
+2023-08-27 16:43:40.781 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> System.InvalidCastException: Cannot write DateTime with Kind=Local to PostgreSQL type 'timestamp with time zone', only UTC is supported. Note that it's not possible to mix DateTimes with different Kinds in an array/range. See the Npgsql.EnableLegacyTimestampBehavior AppContext switch to enable legacy behavior.
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateAndGetLength(DateTime value, NpgsqlParameter parameter)
+   at Npgsql.Internal.TypeHandlers.DateTimeHandlers.TimestampTzHandler.ValidateObjectAndGetLength(Object value, NpgsqlLengthCache& lengthCache, NpgsqlParameter parameter)
+   at Npgsql.NpgsqlParameter.ValidateAndGetLength()
+   at Npgsql.NpgsqlParameterCollection.ProcessParameters(TypeMapper typeMapper, Boolean validateValues, CommandType commandType)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at contactManagerAPI.Services.UserRepository.UserRepository.CreateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\UserRepository\UserRepository.cs:line 54
+   at contactManagerAPI.Services.AuthServices.AuthService.CreateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\AuthServices\AuthService.cs:line 66
+   at contactManagerAPI.Controllers.AuthController.Register(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Controllers\AuthController.cs:line 80
+   at lambda_method15(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-08-27 16:43:40.817 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5018/api/Auth/register application/json 385 - 500 - text/plain;+charset=utf-8 575.1305ms
+2023-08-27 16:46:51.560 +08:00 [INF] Application is shutting down...
+2023-08-27 16:47:41.236 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 16:47:41.324 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 16:47:41.328 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 16:47:41.329 +08:00 [INF] Hosting environment: Development
+2023-08-27 16:47:41.331 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 16:47:50.131 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/swagger/index.html - -
+2023-08-27 16:47:50.241 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/swagger/index.html - - - 200 - text/html;charset=utf-8 111.2012ms
+2023-08-27 16:47:50.366 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/swagger/v1/swagger.json - -
+2023-08-27 16:47:50.445 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 78.3266ms
+2023-08-27 16:48:34.404 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5018/api/Auth/register application/json 386
+2023-08-27 16:48:34.414 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-08-27 16:48:34.421 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Register (contactManagerAPI)'
+2023-08-27 16:48:34.444 +08:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Register(contactManagerAPI.DTO.UserDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 16:48:35.771 +08:00 [INF] Executing OkObjectResult, writing value of type 'contactManagerAPI.Models.SvcResponse`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-08-27 16:48:35.777 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Register (contactManagerAPI) in 1327.6634ms
+2023-08-27 16:48:35.781 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Register (contactManagerAPI)'
+2023-08-27 16:48:35.790 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5018/api/Auth/register application/json 386 - 200 - application/json;+charset=utf-8 1386.3825ms
+2023-08-27 16:48:42.984 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/api/Auth/All - -
+2023-08-27 16:48:42.987 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI)'
+2023-08-27 16:48:42.992 +08:00 [INF] Route matched with {action = "GetAllUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.Collections.Generic.IEnumerable`1[contactManagerAPI.DTO.UserDTO]]]] GetAllUsers() on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 16:48:43.062 +08:00 [INF] Executing OkObjectResult, writing value of type 'contactManagerAPI.Models.SvcResponse`1[[System.Collections.Generic.IEnumerable`1[[contactManagerAPI.DTO.UserDTO, contactManagerAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-08-27 16:48:43.067 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI) in 73.1133ms
+2023-08-27 16:48:43.069 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI)'
+2023-08-27 16:48:43.071 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/api/Auth/All - - - 200 - application/json;+charset=utf-8 87.0505ms
+2023-08-27 16:51:29.573 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5018/api/Auth/login application/json 47
+2023-08-27 16:51:29.576 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Login (contactManagerAPI)'
+2023-08-27 16:51:29.581 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Login(contactManagerAPI.DTO.UserAuthDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 16:51:30.136 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Login (contactManagerAPI) in 552.7794ms
+2023-08-27 16:51:30.138 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Login (contactManagerAPI)'
+2023-08-27 16:51:30.140 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentOutOfRangeException: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'http://www.w3.org/2001/04/xmldsig-more#hmac-sha512', the key size must be greater than: '512' bits, key has '128' bits. (Parameter 'keyBytes')
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.ValidateKeySize(Byte[] keyBytes, String algorithm, Int32 expectedNumberOfBytes)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.CreateKeyedHashAlgorithm()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.CreateInstance()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.Allocate()
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.GetKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.Sign(Byte[] input)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at contactManagerAPI.Controllers.AuthController.GenerateToken(UserAuthDTO user) in C:\Users\kyle\projects\contactManagerAPI\Controllers\AuthController.cs:line 53
+   at contactManagerAPI.Controllers.AuthController.Login(UserAuthDTO req) in C:\Users\kyle\projects\contactManagerAPI\Controllers\AuthController.cs:line 70
+   at lambda_method199(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-08-27 16:51:30.169 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5018/api/Auth/login application/json 47 - 500 - text/plain;+charset=utf-8 595.1814ms
+2023-08-27 16:53:17.793 +08:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5018/api/Auth/update application/json 539
+2023-08-27 16:53:17.796 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 16:53:17.800 +08:00 [INF] Route matched with {action = "Update", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Update(contactManagerAPI.DTO.UserDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 16:53:17.823 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI) in 18.9676ms
+2023-08-27 16:53:17.826 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 16:53:17.832 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Reflection.TargetException: Non-static method requires a target.
+   at System.Reflection.MethodBase.ValidateInvokeTarget(Object target)
+   at System.Reflection.RuntimeMethodInfo.InvokeOneParameter(Object obj, BindingFlags invokeAttr, Binder binder, Object parameter, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
+   at contactManagerAPI.Services.UserRepository.UserRepository.UpdateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\UserRepository\UserRepository.cs:line 157
+   at contactManagerAPI.Services.AuthServices.AuthService.UpdateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\AuthServices\AuthService.cs:line 114
+   at contactManagerAPI.Controllers.AuthController.Update(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Controllers\AuthController.cs:line 91
+   at lambda_method209(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-08-27 16:53:17.847 +08:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5018/api/Auth/update application/json 539 - 500 - text/plain;+charset=utf-8 53.6332ms
+2023-08-27 16:56:41.293 +08:00 [INF] Application is shutting down...
+2023-08-27 17:07:30.879 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 17:07:31.239 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 17:07:31.242 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 17:07:31.245 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 17:07:31.247 +08:00 [INF] Hosting environment: Development
+2023-08-27 17:07:31.249 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 17:07:32.120 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger - -
+2023-08-27 17:07:32.356 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger - - - 301 0 - 237.8970ms
+2023-08-27 17:07:32.388 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 17:07:32.620 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 231.9723ms
+2023-08-27 17:07:32.625 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/swagger-ui.css - -
+2023-08-27 17:07:32.627 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/swagger-ui-standalone-preset.js - -
+2023-08-27 17:07:32.628 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 17:07:32.627 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/swagger-ui-bundle.js - -
+2023-08-27 17:07:32.649 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 17:07:32.652 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 24.1986ms
+2023-08-27 17:07:32.687 +08:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-08-27 17:07:32.687 +08:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-08-27 17:07:32.691 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/swagger-ui.css - - - 200 144929 text/css 65.7243ms
+2023-08-27 17:07:32.693 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 65.8199ms
+2023-08-27 17:07:32.707 +08:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-08-27 17:07:32.710 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 82.4637ms
+2023-08-27 17:07:32.757 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 108.3657ms
+2023-08-27 17:07:32.972 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 17:07:33.000 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/favicon-32x32.png - -
+2023-08-27 17:07:33.003 +08:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-08-27 17:07:33.005 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/favicon-32x32.png - - - 200 628 image/png 4.7698ms
+2023-08-27 17:07:33.075 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 102.3369ms
+2023-08-27 17:07:40.081 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/api/Auth/All - -
+2023-08-27 17:07:40.099 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI)'
+2023-08-27 17:07:40.122 +08:00 [INF] Route matched with {action = "GetAllUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.Collections.Generic.IEnumerable`1[contactManagerAPI.DTO.UserDTO]]]] GetAllUsers() on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 17:07:41.390 +08:00 [INF] Executing OkObjectResult, writing value of type 'contactManagerAPI.Models.SvcResponse`1[[System.Collections.Generic.IEnumerable`1[[contactManagerAPI.DTO.UserDTO, contactManagerAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-08-27 17:07:41.407 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI) in 1276.9987ms
+2023-08-27 17:07:41.412 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI)'
+2023-08-27 17:07:41.424 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/api/Auth/All - - - 200 - application/json;+charset=utf-8 1342.8223ms
+2023-08-27 17:09:39.403 +08:00 [INF] Request starting HTTP/2 PUT https://localhost:7239/api/Auth/update application/json 514
+2023-08-27 17:09:39.406 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 17:09:39.418 +08:00 [INF] Route matched with {action = "Update", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Update(contactManagerAPI.DTO.UserDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 17:09:39.891 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI) in 468.9625ms
+2023-08-27 17:09:39.894 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 17:09:39.899 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'User.ID' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key, first delete the dependent and invoke 'SaveChanges', and then associate the dependent with the new principal.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetPropertyModified(IProperty property, Boolean changeState, Boolean isModified, Boolean isConceptualNull, Boolean acceptChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectValueChange(InternalEntityEntry entry, IProperty property)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.LocalDetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(IStateManager stateManager)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.TryDetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at contactManagerAPI.Services.UserRepository.UserRepository.UpdateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\UserRepository\UserRepository.cs:line 163
+   at contactManagerAPI.Services.AuthServices.AuthService.UpdateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\AuthServices\AuthService.cs:line 114
+   at contactManagerAPI.Controllers.AuthController.Update(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Controllers\AuthController.cs:line 91
+   at lambda_method15(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-08-27 17:09:39.950 +08:00 [INF] Request finished HTTP/2 PUT https://localhost:7239/api/Auth/update application/json 514 - 500 - text/plain;+charset=utf-8 547.1263ms
+2023-08-27 17:11:23.479 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 17:11:23.726 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 17:11:23.728 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 17:11:23.731 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 17:11:23.733 +08:00 [INF] Hosting environment: Development
+2023-08-27 17:11:23.735 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 17:11:24.424 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 17:11:24.755 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 332.1837ms
+2023-08-27 17:11:24.765 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 17:11:24.771 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 6.0916ms
+2023-08-27 17:11:24.783 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 17:11:24.847 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 63.7405ms
+2023-08-27 17:11:25.111 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 17:11:25.212 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 100.9197ms
+2023-08-27 17:12:07.222 +08:00 [INF] Request starting HTTP/2 PUT https://localhost:7239/api/Auth/update application/json 259
+2023-08-27 17:12:07.241 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 17:12:07.287 +08:00 [INF] Route matched with {action = "Update", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Update(contactManagerAPI.DTO.UserDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 17:15:54.977 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI) in 227679.3503ms
+2023-08-27 17:15:54.992 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 17:15:55.003 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'User.ID' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key, first delete the dependent and invoke 'SaveChanges', and then associate the dependent with the new principal.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetPropertyModified(IProperty property, Boolean changeState, Boolean isModified, Boolean isConceptualNull, Boolean acceptChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectValueChange(InternalEntityEntry entry, IProperty property)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.LocalDetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(IStateManager stateManager)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.TryDetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at contactManagerAPI.Services.UserRepository.UserRepository.UpdateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\UserRepository\UserRepository.cs:line 163
+   at contactManagerAPI.Services.AuthServices.AuthService.UpdateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\AuthServices\AuthService.cs:line 114
+   at contactManagerAPI.Controllers.AuthController.Update(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Controllers\AuthController.cs:line 91
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-08-27 17:15:55.119 +08:00 [INF] Request finished HTTP/2 PUT https://localhost:7239/api/Auth/update application/json 259 - 500 - text/plain;+charset=utf-8 227896.1678ms
+2023-08-27 17:16:45.533 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 17:16:45.737 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 17:16:45.739 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 17:16:45.742 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 17:16:45.743 +08:00 [INF] Hosting environment: Development
+2023-08-27 17:16:45.745 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 17:16:46.199 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 17:16:46.517 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 329.2822ms
+2023-08-27 17:16:46.532 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 17:16:46.532 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 17:16:46.559 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 26.9657ms
+2023-08-27 17:16:46.590 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 58.8303ms
+2023-08-27 17:16:46.633 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 17:16:46.752 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 118.5188ms
+2023-08-27 17:17:43.289 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 17:17:43.486 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 17:17:43.488 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 17:17:43.491 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 17:17:43.492 +08:00 [INF] Hosting environment: Development
+2023-08-27 17:17:43.493 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 17:17:43.812 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 17:17:44.115 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 305.3642ms
+2023-08-27 17:17:44.166 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 17:17:44.166 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 17:17:44.191 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 23.7608ms
+2023-08-27 17:17:44.235 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 69.4448ms
+2023-08-27 17:17:44.349 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 17:17:44.451 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 101.6407ms
+2023-08-27 17:18:18.822 +08:00 [INF] Request starting HTTP/2 PUT https://localhost:7239/api/Auth/update application/json 216
+2023-08-27 17:18:18.845 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 17:18:18.904 +08:00 [INF] Route matched with {action = "Update", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Update(contactManagerAPI.DTO.UserDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 17:19:26.610 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI) in 67692.4634ms
+2023-08-27 17:19:26.621 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 17:19:26.631 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'User.ID' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key, first delete the dependent and invoke 'SaveChanges', and then associate the dependent with the new principal.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetPropertyModified(IProperty property, Boolean changeState, Boolean isModified, Boolean isConceptualNull, Boolean acceptChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectValueChange(InternalEntityEntry entry, IProperty property)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.LocalDetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(IStateManager stateManager)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.TryDetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at contactManagerAPI.Services.UserRepository.UserRepository.UpdateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\UserRepository\UserRepository.cs:line 163
+   at contactManagerAPI.Services.AuthServices.AuthService.UpdateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\AuthServices\AuthService.cs:line 114
+   at contactManagerAPI.Controllers.AuthController.Update(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Controllers\AuthController.cs:line 91
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-08-27 17:19:26.740 +08:00 [INF] Request finished HTTP/2 PUT https://localhost:7239/api/Auth/update application/json 216 - 500 - text/plain;+charset=utf-8 67919.2778ms
+2023-08-27 19:30:22.411 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 19:30:22.602 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 19:30:22.603 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 19:30:22.607 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 19:30:22.608 +08:00 [INF] Hosting environment: Development
+2023-08-27 19:30:22.610 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 19:30:23.222 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 19:30:23.553 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 330.6559ms
+2023-08-27 19:30:23.562 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 19:30:23.573 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 11.3261ms
+2023-08-27 19:30:23.577 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 19:30:23.627 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 49.8577ms
+2023-08-27 19:30:23.669 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 19:30:23.766 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 97.5598ms
+2023-08-27 19:31:05.236 +08:00 [INF] Request starting HTTP/2 PUT https://localhost:7239/api/Auth/update application/json 232
+2023-08-27 19:31:05.261 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 19:31:05.315 +08:00 [INF] Route matched with {action = "Update", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Update(contactManagerAPI.DTO.UserDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 19:31:08.092 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI) in 2762.6897ms
+2023-08-27 19:31:08.103 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 19:31:08.112 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The property 'User.ID' is part of a key and so cannot be modified or marked as modified. To change the principal of an existing entity with an identifying foreign key, first delete the dependent and invoke 'SaveChanges', and then associate the dependent with the new principal.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetPropertyModified(IProperty property, Boolean changeState, Boolean isModified, Boolean isConceptualNull, Boolean acceptChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectValueChange(InternalEntityEntry entry, IProperty property)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.LocalDetectChanges(InternalEntityEntry entry)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.ChangeDetector.DetectChanges(IStateManager stateManager)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.ChangeTracker.DetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.TryDetectChanges()
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at contactManagerAPI.Services.UserRepository.UserRepository.UpdateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\UserRepository\UserRepository.cs:line 163
+   at contactManagerAPI.Services.AuthServices.AuthService.UpdateUser(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\AuthServices\AuthService.cs:line 114
+   at contactManagerAPI.Controllers.AuthController.Update(UserDTO req) in C:\Users\kyle\projects\contactManagerAPI\Controllers\AuthController.cs:line 91
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-08-27 19:31:08.202 +08:00 [INF] Request finished HTTP/2 PUT https://localhost:7239/api/Auth/update application/json 232 - 500 - text/plain;+charset=utf-8 2965.8329ms
+2023-08-27 19:32:08.572 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 19:32:08.816 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 19:32:08.818 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 19:32:08.822 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 19:32:08.824 +08:00 [INF] Hosting environment: Development
+2023-08-27 19:32:08.825 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 19:32:09.492 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 19:32:09.792 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 300.1552ms
+2023-08-27 19:32:09.817 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 19:32:09.820 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 19:32:09.843 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 25.0562ms
+2023-08-27 19:32:09.884 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 63.4449ms
+2023-08-27 19:32:09.990 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 19:32:10.105 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 114.6561ms
+2023-08-27 19:32:18.898 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/api/Auth/All - -
+2023-08-27 19:32:18.916 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI)'
+2023-08-27 19:32:18.973 +08:00 [INF] Route matched with {action = "GetAllUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.Collections.Generic.IEnumerable`1[contactManagerAPI.DTO.UserDTO]]]] GetAllUsers() on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 19:32:21.106 +08:00 [INF] Executing OkObjectResult, writing value of type 'contactManagerAPI.Models.SvcResponse`1[[System.Collections.Generic.IEnumerable`1[[contactManagerAPI.DTO.UserDTO, contactManagerAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-08-27 19:32:21.134 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI) in 2148.957ms
+2023-08-27 19:32:21.141 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI)'
+2023-08-27 19:32:21.159 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/api/Auth/All - - - 200 - application/json;+charset=utf-8 2261.3611ms
+2023-08-27 19:32:33.800 +08:00 [INF] Request starting HTTP/2 PUT https://localhost:7239/api/Auth/update application/json 232
+2023-08-27 19:32:33.805 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 19:32:33.829 +08:00 [INF] Route matched with {action = "Update", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Update(contactManagerAPI.DTO.UserDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 19:32:34.569 +08:00 [INF] Executing BadRequestObjectResult, writing value of type 'contactManagerAPI.Models.SvcResponse`1[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-08-27 19:32:34.576 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI) in 740.3817ms
+2023-08-27 19:32:34.579 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Update (contactManagerAPI)'
+2023-08-27 19:32:34.583 +08:00 [INF] Request finished HTTP/2 PUT https://localhost:7239/api/Auth/update application/json 232 - 400 - application/json;+charset=utf-8 782.2718ms
+2023-08-27 19:32:59.021 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/api/Auth/All - -
+2023-08-27 19:32:59.023 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI)'
+2023-08-27 19:32:59.025 +08:00 [INF] Route matched with {action = "GetAllUsers", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.Collections.Generic.IEnumerable`1[contactManagerAPI.DTO.UserDTO]]]] GetAllUsers() on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 19:32:59.061 +08:00 [INF] Executing OkObjectResult, writing value of type 'contactManagerAPI.Models.SvcResponse`1[[System.Collections.Generic.IEnumerable`1[[contactManagerAPI.DTO.UserDTO, contactManagerAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2023-08-27 19:32:59.067 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI) in 39.1492ms
+2023-08-27 19:32:59.069 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.GetAllUsers (contactManagerAPI)'
+2023-08-27 19:32:59.075 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/api/Auth/All - - - 200 - application/json;+charset=utf-8 53.8783ms
+2023-08-27 19:39:30.654 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 19:39:30.752 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 19:39:30.755 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 19:39:30.756 +08:00 [INF] Hosting environment: Development
+2023-08-27 19:39:30.757 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 19:39:47.603 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/swagger/index.html - -
+2023-08-27 19:39:47.752 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/swagger/index.html - - - 200 - text/html;charset=utf-8 149.9649ms
+2023-08-27 19:39:47.889 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/swagger/v1/swagger.json - -
+2023-08-27 19:39:47.997 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 108.5597ms
+2023-08-27 19:40:22.796 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5018/api/Auth/login application/json 71
+2023-08-27 19:40:22.809 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-08-27 19:40:22.816 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Login (contactManagerAPI)'
+2023-08-27 19:40:22.846 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Login(contactManagerAPI.DTO.UserAuthDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 19:40:24.905 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Login (contactManagerAPI) in 2048.4485ms
+2023-08-27 19:40:24.912 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Login (contactManagerAPI)'
+2023-08-27 19:40:24.917 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_AuditLogs"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|234_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_AuditLogs"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: AuditLogs
+    ConstraintName: PK_AuditLogs
+    File: nbtinsert.c
+    Line: 671
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at contactManagerAPI.Services.AuditServices.AuditService.LogEvent(Int32 EntityID, String Action, String EntityType, String Details) in C:\Users\kyle\projects\contactManagerAPI\Services\AuditServices\AuditService.cs:line 39
+   at contactManagerAPI.Services.AuthServices.AuthService.AuthenticateUser(UserAuthDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\AuthServices\AuthService.cs:line 54
+   at contactManagerAPI.Controllers.AuthController.Login(UserAuthDTO req) in C:\Users\kyle\projects\contactManagerAPI\Controllers\AuthController.cs:line 67
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-08-27 19:40:25.011 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5018/api/Auth/login application/json 71 - 500 - text/plain;+charset=utf-8 2214.7622ms
+2023-08-27 19:46:43.794 +08:00 [INF] Application is shutting down...
+2023-08-27 19:46:54.146 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 19:46:54.403 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 19:46:54.406 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 19:46:54.410 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 19:46:54.411 +08:00 [INF] Hosting environment: Development
+2023-08-27 19:46:54.413 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 19:46:55.320 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 19:46:55.887 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 19:46:55.888 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 568.6869ms
+2023-08-27 19:46:55.909 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 19:46:55.911 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 23.5681ms
+2023-08-27 19:46:56.208 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 298.9606ms
+2023-08-27 19:46:56.392 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 19:46:56.610 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 217.4352ms
+2023-08-27 19:47:39.687 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 19:47:39.967 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 19:47:39.970 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 19:47:39.978 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 19:47:39.980 +08:00 [INF] Hosting environment: Development
+2023-08-27 19:47:39.983 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 19:47:40.424 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 19:47:40.958 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 535.6927ms
+2023-08-27 19:47:40.969 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 19:47:40.977 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 8.1652ms
+2023-08-27 19:47:40.991 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 19:47:41.076 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 84.7264ms
+2023-08-27 19:47:41.293 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 19:47:41.450 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 156.6719ms
+2023-08-27 19:49:13.607 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 19:49:13.878 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 19:49:13.900 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 19:49:13.906 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 19:49:13.907 +08:00 [INF] Hosting environment: Development
+2023-08-27 19:49:13.909 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 19:49:14.191 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 19:49:14.584 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 395.3233ms
+2023-08-27 19:49:14.605 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 19:49:14.609 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 19:49:14.631 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 25.6874ms
+2023-08-27 19:49:14.689 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 80.5561ms
+2023-08-27 19:49:14.744 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 19:49:14.879 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.5628ms
+2023-08-27 19:49:26.568 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7239/api/Auth/login application/json 71
+2023-08-27 19:49:26.593 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Login (contactManagerAPI)'
+2023-08-27 19:49:26.654 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Login(contactManagerAPI.DTO.UserAuthDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 19:50:15.404 +08:00 [INF] Executed action contactManagerAPI.Controllers.AuthController.Login (contactManagerAPI) in 48735.0583ms
+2023-08-27 19:50:15.416 +08:00 [INF] Executed endpoint 'contactManagerAPI.Controllers.AuthController.Login (contactManagerAPI)'
+2023-08-27 19:50:15.434 +08:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Npgsql.PostgresException (0x80004005): 23505: duplicate key value violates unique constraint "PK_AuditLogs"
+
+DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+   at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|234_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+   at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+  Exception data:
+    Severity: ERROR
+    SqlState: 23505
+    MessageText: duplicate key value violates unique constraint "PK_AuditLogs"
+    Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+    SchemaName: public
+    TableName: AuditLogs
+    ConstraintName: PK_AuditLogs
+    File: nbtinsert.c
+    Line: 671
+    Routine: _bt_check_unique
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at contactManagerAPI.Services.AuditServices.AuditService.LogEvent(Int32 EntityID, String Action, String EntityType, String Details) in C:\Users\kyle\projects\contactManagerAPI\Services\AuditServices\AuditService.cs:line 39
+   at contactManagerAPI.Services.AuthServices.AuthService.AuthenticateUser(UserAuthDTO req) in C:\Users\kyle\projects\contactManagerAPI\Services\AuthServices\AuthService.cs:line 44
+   at contactManagerAPI.Controllers.AuthController.Login(UserAuthDTO req) in C:\Users\kyle\projects\contactManagerAPI\Controllers\AuthController.cs:line 67
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-08-27 19:50:15.737 +08:00 [INF] Request finished HTTP/2 POST https://localhost:7239/api/Auth/login application/json 71 - 500 - text/plain;+charset=utf-8 49168.7046ms
+2023-08-27 19:59:37.381 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 19:59:37.725 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 19:59:37.728 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 19:59:37.733 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 19:59:37.735 +08:00 [INF] Hosting environment: Development
+2023-08-27 19:59:37.738 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 19:59:38.573 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 19:59:39.228 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 656.4779ms
+2023-08-27 19:59:39.258 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 19:59:39.270 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 11.8133ms
+2023-08-27 19:59:39.314 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 19:59:39.435 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 120.5463ms
+2023-08-27 19:59:39.689 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 19:59:39.902 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 212.9223ms
+2023-08-27 19:59:59.470 +08:00 [INF] Request starting HTTP/2 POST https://localhost:7239/api/Auth/login application/json 71
+2023-08-27 19:59:59.489 +08:00 [INF] Executing endpoint 'contactManagerAPI.Controllers.AuthController.Login (contactManagerAPI)'
+2023-08-27 19:59:59.531 +08:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[contactManagerAPI.Models.SvcResponse`1[System.String]]] Login(contactManagerAPI.DTO.UserAuthDTO) on controller contactManagerAPI.Controllers.AuthController (contactManagerAPI).
+2023-08-27 20:01:39.922 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-27 20:01:40.227 +08:00 [INF] Now listening on: https://localhost:7239
+2023-08-27 20:01:40.231 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-27 20:01:40.235 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-27 20:01:40.238 +08:00 [INF] Hosting environment: Development
+2023-08-27 20:01:40.240 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-27 20:01:40.872 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/index.html - -
+2023-08-27 20:01:41.316 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/index.html - - - 200 - text/html;charset=utf-8 446.7975ms
+2023-08-27 20:01:41.334 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - -
+2023-08-27 20:01:41.334 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/_vs/browserLink - -
+2023-08-27 20:01:41.350 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_framework/aspnetcore-browser-refresh.js - - - 200 12365 application/javascript;+charset=utf-8 16.4572ms
+2023-08-27 20:01:41.424 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 90.4214ms
+2023-08-27 20:01:41.480 +08:00 [INF] Request starting HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - -
+2023-08-27 20:01:41.639 +08:00 [INF] Request finished HTTP/2 GET https://localhost:7239/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 158.4999ms

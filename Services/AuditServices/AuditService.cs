@@ -1,35 +1,28 @@
 using contactManagerAPI.Data;
 
-namespace contactManagerAPI.Services.AuditServices
-{
-    public class AuditService : IAuditService
-    {
+namespace contactManagerAPI.Services.AuditServices {
+    public class AuditService : IAuditService {
         private readonly DataContext _context;
 
-        public AuditService(DataContext context)
-        {
+        public AuditService(DataContext context) {
             _context = context;
         }
 
-        private int GenerateNewID()
-        {
-            int lastUserID = 0;
-            if (_context.AuditLogs.Any())
-            {
-                lastUserID = _context.Users.Max(u => u.ID);
+        private int GenerateNewID() {
+            int lastLogID = 0;
+            if (_context.AuditLogs.Any()) {
+                lastLogID = _context.AuditLogs.Max(x => x.ID);
             }
 
-            int newID = lastUserID + 1;
+            int newID = lastLogID + 1;
             return newID;
         }
 
-        public async Task LogEvent(int EntityID, string Action, string EntityType, string Details)
-        {
+        public async Task LogEvent(int EntityID, string Action, string EntityType, string Details) {
             AuditLog newLog =
-                new()
-                {
+                new() {
                     ID = GenerateNewID(),
-                    Timestamp = DateTime.Now,
+                    Timestamp = DateTime.UtcNow,
                     EntityID = EntityID,
                     Action = Action,
                     EntityType = EntityType,

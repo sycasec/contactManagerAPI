@@ -6,6 +6,7 @@ namespace contactManagerAPI.Services.UserRepository
     {
         Task<User?> GetUserByUsername(string username);
         Task<User?> GetUserByEmail(string email);
+        Task<User?> GetUserByID(int UserID);
         Task<bool> CreateUser(UserDTO req);
         Task<bool> UserExists(UserAuthDTO req);
         Task<bool> DeleteUserByUsername(string username);

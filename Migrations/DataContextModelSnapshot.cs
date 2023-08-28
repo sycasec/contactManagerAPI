@@ -116,18 +116,22 @@ namespace contactManagerAPI.Migrations
                     b.Property<DateTime?>("AddedOn")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("BillingAddress")
+                        .HasColumnType("text");
+
                     b.Property<int?>("CompanyID")
                         .HasColumnType("integer");
+
+                    b.Property<string>("DeliveryAddress")
+                        .HasColumnType("text");
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
+                    b.Property<string>("EmailAddress")
                         .HasColumnType("text");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int?>("IsDeleted")

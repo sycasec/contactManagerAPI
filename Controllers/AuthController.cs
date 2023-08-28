@@ -62,13 +62,11 @@ namespace contactManagerAPI.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<SvcResponse<string>>> Login(UserAuthDTO req)
+        public async Task<ActionResult<SvcResponse<int>>> Login(UserAuthDTO req)
         {
             var res = await _authService.AuthenticateUser(req);
             if (res.Success)
             {
-                string token = GenerateToken(req);
-                res.Data = token;
                 return Ok(res);
             }
             return BadRequest(res);

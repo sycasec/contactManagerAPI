@@ -13,5 +13,6 @@ namespace contactManagerAPI.DTO
         public string? DeliveryAddress { get; set; }
         public IEnumerable<ContactNumber>? Numbers { get; set; }
         public string? EmailAddress { get; set; }
+        public int? IsFavorite { get; set; }
     }
 }

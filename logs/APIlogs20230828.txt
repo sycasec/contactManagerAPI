@@ -1,0 +1,15 @@
+2023-08-28 01:31:36.588 +08:00 [INF] User profile is available. Using 'C:\Users\kyle\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-08-28 01:31:37.147 +08:00 [INF] Now listening on: http://localhost:5018
+2023-08-28 01:31:37.150 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-08-28 01:31:37.152 +08:00 [INF] Hosting environment: Development
+2023-08-28 01:31:37.153 +08:00 [INF] Content root path: C:\Users\kyle\projects\contactManagerAPI
+2023-08-28 01:31:46.986 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/ - -
+2023-08-28 01:31:47.184 +08:00 [WRN] Failed to determine the https port for redirect.
+2023-08-28 01:31:47.230 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/ - - - 404 0 - 244.7436ms
+2023-08-28 01:31:52.625 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/ - -
+2023-08-28 01:31:52.630 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/ - - - 404 0 - 5.3475ms
+2023-08-28 01:32:00.397 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/swagger/index.html - -
+2023-08-28 01:32:00.478 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/swagger/index.html - - - 200 - text/html;charset=utf-8 81.8088ms
+2023-08-28 01:32:00.588 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5018/swagger/v1/swagger.json - -
+2023-08-28 01:32:00.676 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5018/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 88.7720ms
+2023-08-28 01:52:41.129 +08:00 [INF] Application is shutting down...

@@ -27,9 +27,9 @@ namespace contactManagerAPI.Services.MiscRepository
             return newID;
         }
 
-        public bool ContactNumberExists(ContactNumber ContactNumber)
+        public Task<bool> ContactNumberExists(ContactNumber ContactNumber)
         {
-            bool exists = _context.ContactNumbers.Any(
+            var exists = _context.ContactNumbers.AnyAsync(
                 a =>
                     a.OwnerID == ContactNumber.OwnerID
                     && a.OwnerType == ContactNumber.OwnerType
@@ -41,11 +41,17 @@ namespace contactManagerAPI.Services.MiscRepository
 
         public async Task<bool> AddContactNumber(ContactNumber req)
         {
-            if (!ContactNumberExists(req))
+            /*
+            * input
+            * OwnerID, OwnerType
+            * Number, Type
+            */
+            var contactNumberExists = await ContactNumberExists(req);
+            if (!contactNumberExists)
             {
                 req.ID = GenerateNewID();
                 req.AddedBy = req.OwnerID;
-                req.AddedOn = DateTime.Now;
+                req.AddedOn = DateTime.UtcNow;
                 _ = await _context.ContactNumbers.AddAsync(req);
                 _ = await _context.SaveChangesAsync();
                 return true;
@@ -97,7 +103,7 @@ namespace contactManagerAPI.Services.MiscRepository
             {
                 existingNumber.Number = req.Number;
                 existingNumber.UpdatedBy = req.OwnerID;
-                existingNumber.UpdatedOn = DateTime.Now;
+                existingNumber.UpdatedOn = DateTime.UtcNow;
                 _ = await _context.SaveChangesAsync();
                 return true;
             }

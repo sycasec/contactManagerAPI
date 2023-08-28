@@ -23,9 +23,9 @@ namespace contactManagerAPI.Services.ContactRepository
             return newID;
         }
 
-        public bool ContactExists(ContactDTO req)
+        public Task<bool> ContactExists(ContactDTO req)
         {
-            bool exists = _context.Contacts.Any(
+            var exists = _context.Contacts.AnyAsync(
                 c =>
                     c.UserID == req.UserID
                     && c.FirstName == req.FirstName
@@ -36,9 +36,10 @@ namespace contactManagerAPI.Services.ContactRepository
             return exists;
         }
 
-        public async Task<bool> CreateContact(ContactDTO req)
+        public async Task<int> CreateContact(ContactDTO req)
         {
-            if (!ContactExists(req))
+            var contactExists = await ContactExists(req);
+            if (!contactExists)
             {
                 Contact newContact =
                     new()
@@ -54,15 +55,15 @@ namespace contactManagerAPI.Services.ContactRepository
                         DeliveryAddress = req.DeliveryAddress,
                         EmailAddress = req.EmailAddress,
                         AddedBy = req.UserID,
-                        AddedOn = DateTime.Now,
+                        AddedOn = DateTime.UtcNow,
                         IsDeleted = 0
                     };
 
                 _ = await _context.Contacts.AddAsync(newContact);
                 _ = await _context.SaveChangesAsync();
-                return true;
+                return newContact.ID;
             }
-            return false;
+            return 0;
         }
 
         public async Task<bool> DeactivateContact(int ID)
@@ -94,6 +95,8 @@ namespace contactManagerAPI.Services.ContactRepository
                         typeof(Contact).GetProperty(prop.Name) != null
                         && prop.GetValue(req) != null
                         && prop.Name != nameof(ContactDTO.Numbers)
+                        && prop.Name != nameof(ContactDTO.ID)
+                        && prop.Name != nameof(ContactDTO.UserID)
                     )
                     {
                         typeof(Contact)
@@ -106,11 +109,27 @@ namespace contactManagerAPI.Services.ContactRepository
             return false;
         }
 
-        public async Task<IEnumerable<Contact>> GetAllContacts(int UserID)
+        public async Task<IEnumerable<ContactDTO>> GetAllContacts(int UserID)
         {
-            var res = await _context.Contacts.Where(a => a.UserID == UserID).ToListAsync();
-
-            return res;
+            List<ContactDTO> contactList = await _context.Contacts
+                .Select(
+                    c =>
+                        new ContactDTO
+                        {
+                            ID = c.ID,
+                            UserID = c.UserID,
+                            FirstName = c.FirstName,
+                            LastName = c.LastName,
+                            Description = c.Description,
+                            JobRole = c.JobRole,
+                            BillingAddress = c.BillingAddress,
+                            DeliveryAddress = c.DeliveryAddress,
+                            EmailAddress = c.EmailAddress,
+                            IsFavorite = c.IsFavorite
+                        }
+                )
+                .ToListAsync();
+            return contactList;
         }
     }
 }

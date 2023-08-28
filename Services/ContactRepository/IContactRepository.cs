@@ -5,10 +5,11 @@ namespace contactManagerAPI.Services.ContactRepository
 {
     public interface IContactRepository
     {
-        Task<IEnumerable<Contact>> GetAllContacts(int UserID);
+        Task<IEnumerable<ContactDTO>> GetAllContacts(int UserID);
         Task<Contact?> GetContactByID(int ID);
-        Task<bool> CreateContact(ContactDTO req);
+        Task<int> CreateContact(ContactDTO req);
         Task<bool> DeactivateContact(int ID);
         Task<bool> UpdateContact(ContactDTO req);
+        Task<bool> ContactExists(ContactDTO req);
     }
 }

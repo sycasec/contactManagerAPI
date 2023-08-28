@@ -45,7 +45,7 @@ namespace contactManagerAPI.Services.UserRepository
                         DeliveryAddress = req.DeliveryAddress!,
                         RoleID = 1,
                         AddedBy = 0,
-                        AddedOn = DateTime.Now,
+                        AddedOn = DateTime.UtcNow,
                         IsDeleted = 0,
                         HashedPassword = BCrypt.Net.BCrypt.HashPassword(req.Password)
                     };
@@ -97,12 +97,12 @@ namespace contactManagerAPI.Services.UserRepository
                     user =>
                         new UserDTO
                         {
+                            ID = user.ID,
                             FirstName = user.FirstName,
                             MiddleName = user.MiddleName,
                             LastName = user.LastName,
                             BillingAddress = user.BillingAddress,
                             DeliveryAddress = user.DeliveryAddress,
-                            // TODO: PHONENUMBER
                             EmailAddress = user.EmailAddress,
                             Username = user.Username,
                             RoleID = 1
@@ -124,6 +124,12 @@ namespace contactManagerAPI.Services.UserRepository
             return user;
         }
 
+        public async Task<User?> GetUserByID(int UserID)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == UserID);
+            return user;
+        }
+
         public async Task<int> GetUserID(string username)
         {
             User? user = await GetUserByUsername(username);
@@ -133,35 +139,28 @@ namespace contactManagerAPI.Services.UserRepository
 
         public async Task<bool> UpdateUser(UserDTO req)
         {
-            UserAuthDTO credentials =
-                new() { EmailAddress = req.EmailAddress, Username = req.Username };
+            var existingUser =
+                req.EmailAddress != "" && req.EmailAddress != null
+                    ? await GetUserByEmail(req.EmailAddress)
+                    : await GetUserByUsername(req.Username!);
 
-            bool userExists = await UserExists(credentials);
+            if (existingUser == null)
+                return false;
 
-            if (userExists)
+            foreach (var prop in typeof(UserDTO).GetProperties())
             {
-                var existingUser = credentials.EmailAddress is not null
-                    ? await GetUserByEmail(credentials.EmailAddress)
-                    : await GetUserByUsername(credentials.Username!);
-
-                var DTOprops = typeof(UserDTO).GetProperties();
-
-                foreach (var prop in DTOprops)
+                if (
+                    typeof(User).GetProperty(prop.Name) != null
+                    && prop.GetValue(req) != null
+                    && prop.Name != nameof(UserDTO.Numbers)
+                )
                 {
-                    if (
-                        typeof(User).GetProperty(prop.Name) != null
-                        && prop.GetValue(req) != null
-                        && prop.Name != nameof(UserDTO.Numbers)
-                    )
-                    {
-                        typeof(User)
-                            .GetProperty(prop.Name)
-                            ?.SetValue(existingUser, prop.GetValue(req));
-                    }
+                    typeof(User).GetProperty(prop.Name)?.SetValue(existingUser, prop.GetValue(req));
                 }
-                await _context.SaveChangesAsync();
             }
-            return false;
+
+            await _context.SaveChangesAsync();
+            return true;
         }
     }
 }
