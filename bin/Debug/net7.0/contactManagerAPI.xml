@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>contactManagerAPI</name>
+    </assembly>
+    <members>
+        <member name="T:contactManagerAPI.Mappers.AddressMapper">
+            <summary>
+            Mapper class to define mappings between Contact entities and models.
+            </summary>
+        </member>
+        <member name="M:contactManagerAPI.Mappers.AddressMapper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:contactManagerAPI.Mappers.AddressMapper"/> class.
+            </summary>
+        </member>
+        <member name="T:contactManagerAPI.Mappers.ContactMapper">
+            <summary>
+            Mapper class to define mappings between Contact entities and models.
+            </summary>
+        </member>
+        <member name="M:contactManagerAPI.Mappers.ContactMapper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:contactManagerAPI.Mappers.ContactMapper"/> class.
+            </summary>
+        </member>
+        <member name="T:contactManagerAPI.Mappers.NumberMapper">
+            <summary>
+            Mapper class to define mappings between Contact entities and models.
+            </summary>
+        </member>
+        <member name="M:contactManagerAPI.Mappers.NumberMapper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:contactManagerAPI.Mappers.NumberMapper"/> class.
+            </summary>
+        </member>
+        <member name="T:contactManagerAPI.Mappers.UserMapper">
+            <summary>
+            Mapper class to define mappings between User entities and user-related models.
+            </summary>
+        </member>
+        <member name="M:contactManagerAPI.Mappers.UserMapper.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:contactManagerAPI.Mappers.UserMapper"/> class.
+            </summary>
+        </member>
+        <member name="T:contactManagerAPI.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:contactManagerAPI.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:contactManagerAPI.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:contactManagerAPI.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:contactManagerAPI.Models.ContactModels.GetContactModel">
+            <summary>
+            Model for retrieving user contact information.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.ContactModels.GetContactModel.ID">
+            <summary>
+            Gets or sets the ID of the contact.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.ContactModels.GetContactModel.FirstName">
+            <summary>
+            Gets or sets the first name of the contact.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.ContactModels.GetContactModel.LastName">
+            <summary>
+            Gets or sets the last name of the contact.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.ContactModels.GetContactModel.EmailAddress">
+            <summary>
+            Gets or sets the email of the contact.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.ContactModels.GetContactModel.IsFavorite">
+            <summary>
+            Gets or sets a value indicating whether the item is marked as favorite.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.ContactModels.GetContactModel.IsBlocked">
+            <summary>
+            Gets or sets a value indicating whether the item is blocked.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.ContactModels.GetContactModel.AddedOn">
+            <summary>
+            Gets or sets the time created of the contact
+            </summary>
+        </member>
+        <member name="T:contactManagerAPI.Models.ContactModels.UpsertContactModel">
+            <summary>
+            Model for updating or inserting user contact information.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.ContactModels.UpsertContactModel.FirstName">
+            <summary>
+            Gets or sets the first name of the contact.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.ContactModels.UpsertContactModel.LastName">
+            <summary>
+            Gets or sets the last name of the contact.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.ContactModels.UpsertContactModel.EmailAddress">
+            <summary>
+            Gets or sets the email of the contact.
+            </summary>
+        </member>
+        <member name="T:contactManagerAPI.Models.UserModels.SecurityUpdateModel">
+            <summary>
+            Model for updating user's password.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.SecurityUpdateModel.OldPassword">
+            <summary>
+            Gets or sets the old password of the user.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.SecurityUpdateModel.NewPassword">
+            <summary>
+            Gets or sets the new password of the user.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.SecurityUpdateModel.ConfirmNewPassword">
+            <summary>
+            Gets or sets the confirmation of the new password of the user.
+            </summary>
+        </member>
+        <member name="T:contactManagerAPI.Models.UserModels.UpdateUserModel">
+            <summary>
+            Model for updating user profile information.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.UpdateUserModel.FirstName">
+            <summary>
+            Gets or sets the updated first name of the user.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.UpdateUserModel.LastName">
+            <summary>
+            Gets or sets the updated last name of the user.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.UpdateUserModel.Username">
+            <summary>
+            Gets or sets the updated username of the user.
+            </summary>
+        </member>
+        <member name="T:contactManagerAPI.Models.UserModels.UserDetailsModel">
+            <summary>
+            Model for retrieving user profile information.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.UserDetailsModel.ID">
+            <summary>
+            Gets or sets the ID of the user.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.UserDetailsModel.FirstName">
+            <summary>
+            Gets or sets the first name of the user.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.UserDetailsModel.LastName">
+            <summary>
+            Gets or sets the last name of the user.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.UserDetailsModel.Username">
+            <summary>
+            Gets or sets the username of the user.
+            </summary>
+        </member>
+        <member name="P:contactManagerAPI.Models.UserModels.UserDetailsModel.EmailAddress">
+            <summary>
+            Gets or sets the email of the user.
+            </summary>
+        </member>
+        <member name="T:contactManagerAPI.Repositories.ContactRepository.ContactRepository">
+            <summary>
+            Repository class for contact operations.
+            </summary>
+        </member>
+        <member name="M:contactManagerAPI.Repositories.ContactRepository.ContactRepository.#ctor(contactManagerAPI.Data.DataContext)">
+            <summary>
+            Initializes a new instance of the `ContactRepository` class.
+            </summary>
+            <param name="context">The database context.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown if the context is null.</exception>
+        </member>
+        <member name="M:contactManagerAPI.Repositories.ContactRepository.ContactRepository.ContactExists(contactManagerAPI.Entities.Contact)">
+            <inheritdoc/>
+        </member>
+        <member name="M:contactManagerAPI.Repositories.ContactRepository.ContactRepository.CreateContact(contactManagerAPI.Entities.Contact)">
+            <inheritdoc/>
+        </member>
+        <member name="M:contactManagerAPI.Repositories.ContactRepository.ContactRepository.DeactivateContact(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:contactManagerAPI.Repositories.ContactRepository.ContactRepository.UpdateContact(contactManagerAPI.Entities.Contact,contactManagerAPI.Entities.Contact)">
+            <inheritdoc/>
+        </member>
+        <member name="M:contactManagerAPI.Repositories.ContactRepository.ContactRepository.GetAllContacts(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:contactManagerAPI.Repositories.NumberRepository.NumberRepository">
+            <summary>
+            Repository class for Number operations.
+            </summary>
+        </member>
+        <member name="T:contactManagerAPI.Utils.JWTokenizer">
+            <summary>
+            Utility class for generating JWT tokens.
+            </summary>
+        </member>
+        <member name="M:contactManagerAPI.Utils.JWTokenizer.GenerateToken(contactManagerAPI.Entities.User,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Generates an access token for the given user using JWT.
+            </summary>
+            <param name="user">The user for whom the token is being generated.</param>
+            <param name="configuration">The configuration containing JWT secret key.</param>
+            <returns>The generated JWT token as a string.</returns>
+        </member>
+    </members>
+</doc>

@@ -104,3 +104,14 @@ C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\System.IdentityModel.T
 C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\contactManagerAPI.xml
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Scrutor.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.dll
+C:\Users\kyle\projects\contactManagerAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\kyle\projects\contactManagerAPI\obj\Debug\net7.0\contactManagerAPI.xml

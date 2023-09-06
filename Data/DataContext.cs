@@ -1,4 +1,4 @@
-using contactManagerAPI.Models;
+using contactManagerAPI.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 

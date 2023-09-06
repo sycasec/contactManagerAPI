@@ -22,7 +22,7 @@ namespace contactManagerAPI.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("contactManagerAPI.Models.Address", b =>
+            modelBuilder.Entity("contactManagerAPI.Entities.Address", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -37,41 +37,47 @@ namespace contactManagerAPI.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("City")
+                        .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int?>("IsDeleted")
+                        .HasColumnType("integer");
 
                     b.Property<int?>("OwnerID")
                         .HasColumnType("integer");
 
                     b.Property<string>("OwnerType")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("PostalCode")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("State")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Street")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Type")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int?>("UpdatedBy")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("UpdatedOn")
+                    b.Property<DateTime?>("UpdatedOn")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<int?>("isDeleted")
-                        .HasColumnType("integer");
 
                     b.HasKey("ID");
 
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("contactManagerAPI.Models.AuditLog", b =>
+            modelBuilder.Entity("contactManagerAPI.Entities.AuditLog", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -102,7 +108,7 @@ namespace contactManagerAPI.Migrations
                     b.ToTable("AuditLogs");
                 });
 
-            modelBuilder.Entity("contactManagerAPI.Models.Contact", b =>
+            modelBuilder.Entity("contactManagerAPI.Entities.Contact", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -116,38 +122,36 @@ namespace contactManagerAPI.Migrations
                     b.Property<DateTime?>("AddedOn")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("BillingAddress")
-                        .HasColumnType("text");
-
-                    b.Property<int?>("CompanyID")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("DeliveryAddress")
-                        .HasColumnType("text");
-
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("EmailAddress")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int?>("IsBlocked")
+                        .HasColumnType("integer");
 
                     b.Property<int?>("IsDeleted")
                         .HasColumnType("integer");
 
-                    b.Property<string>("JobRole")
-                        .HasColumnType("text");
+                    b.Property<int?>("IsFavorite")
+                        .HasColumnType("integer");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int?>("UpdatedBy")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("UpdatedOn")
-                        .HasColumnType("integer");
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("UserID")
                         .HasColumnType("integer");
@@ -157,7 +161,7 @@ namespace contactManagerAPI.Migrations
                     b.ToTable("Contacts");
                 });
 
-            modelBuilder.Entity("contactManagerAPI.Models.ContactActivity", b =>
+            modelBuilder.Entity("contactManagerAPI.Entities.ContactActivity", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -174,7 +178,7 @@ namespace contactManagerAPI.Migrations
                     b.Property<int>("AddedBy")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("AddedOn")
+                    b.Property<DateTime?>("AddedOn")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("ContactID")
@@ -186,8 +190,8 @@ namespace contactManagerAPI.Migrations
                     b.Property<int>("UpdatedBy")
                         .HasColumnType("integer");
 
-                    b.Property<int>("UpdatedOn")
-                        .HasColumnType("integer");
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("UserID")
                         .HasColumnType("integer");
@@ -197,7 +201,7 @@ namespace contactManagerAPI.Migrations
                     b.ToTable("contactActivities");
                 });
 
-            modelBuilder.Entity("contactManagerAPI.Models.ContactNumber", b =>
+            modelBuilder.Entity("contactManagerAPI.Entities.ContactNumber", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -237,7 +241,76 @@ namespace contactManagerAPI.Migrations
                     b.ToTable("ContactNumbers");
                 });
 
-            modelBuilder.Entity("contactManagerAPI.Models.Organization", b =>
+            modelBuilder.Entity("contactManagerAPI.Entities.Note", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("AddedBy")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("AddedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("ContactID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("IsDeleted")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UpdatedOn")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Notes");
+                });
+
+            modelBuilder.Entity("contactManagerAPI.Entities.NoteContent", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("AddedBy")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("AddedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Contents")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("IsDeleted")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("NoteID")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("NoteContents");
+                });
+
+            modelBuilder.Entity("contactManagerAPI.Entities.Organization", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -293,7 +366,7 @@ namespace contactManagerAPI.Migrations
                     b.ToTable("Organizations");
                 });
 
-            modelBuilder.Entity("contactManagerAPI.Models.User", b =>
+            modelBuilder.Entity("contactManagerAPI.Entities.User", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -304,16 +377,8 @@ namespace contactManagerAPI.Migrations
                     b.Property<int?>("AddedBy")
                         .HasColumnType("integer");
 
-                    b.Property<DateTime>("AddedOn")
+                    b.Property<DateTime?>("AddedOn")
                         .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("BillingAddress")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("DeliveryAddress")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.Property<string>("EmailAddress")
                         .IsRequired()
@@ -321,7 +386,8 @@ namespace contactManagerAPI.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(40)
+                        .HasColumnType("character varying(40)");
 
                     b.Property<string>("HashedPassword")
                         .IsRequired()
@@ -333,17 +399,14 @@ namespace contactManagerAPI.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("text");
 
-                    b.Property<string>("MiddleName")
-                        .HasColumnType("text");
-
                     b.Property<int>("RoleID")
                         .HasColumnType("integer");
 
                     b.Property<int?>("UpdatedBy")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("UpdatedOn")
-                        .HasColumnType("integer");
+                    b.Property<DateTime?>("UpdatedOn")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Username")
                         .IsRequired()
@@ -352,75 +415,6 @@ namespace contactManagerAPI.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("contactManagerAPI.Note", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("AddedBy")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("AddedOn")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("ContactID")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("IsDeleted")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UpdatedOn")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UserID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("Notes");
-                });
-
-            modelBuilder.Entity("contactManagerAPI.NoteContent", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<int>("AddedBy")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("AddedOn")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("Contents")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("IsDeleted")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("NoteID")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UpdatedBy")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UpdatedOn")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("NoteContents");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,138 +1,104 @@
+using AutoMapper;
+using contactManagerAPI.Entities;
+using contactManagerAPI.Models.ContactModels;
+using contactManagerAPI.Repositories.ContactRepository;
+using contactManagerAPI.Repositories.UserRepository;
 using contactManagerAPI.Services.AuditServices;
-using contactManagerAPI.Services.ContactRepository;
-using contactManagerAPI.Services.MiscRepository;
-using Serilog;
 
 namespace contactManagerAPI.Services.ContactServices
 {
     public class ContactService : IContactService
     {
         private readonly IContactRepository _contactRepository;
-        private readonly IAuditService _auditor;
-        private readonly IMiscRepository _numberRepository;
-        private readonly IUserRepository _userRepository;
+        private readonly IAuditService _auditService;
+        private readonly IMapper _mapper;
 
         public ContactService(
             IContactRepository contactRepository,
             IAuditService auditor,
-            IMiscRepository numberRepository,
-            IUserRepository userRepository
+            IMapper mapper
         )
         {
             _contactRepository = contactRepository;
-            _auditor = auditor;
-            _numberRepository = numberRepository;
-            _userRepository = userRepository;
+            _auditService = auditor;
+            _mapper = mapper;
         }
 
-        public async Task<SvcResponse<int>> CreateContact(ContactDTO req)
+        public async Task<GetContactModel> CreateContact(int UserID, UpsertContactModel Req)
         {
-            var ContactID = await _contactRepository.CreateContact(req);
-            var res = new SvcResponse<int>();
-            if (ContactID is not 0)
+            var newContact = _mapper.Map<Contact>(Req);
+            newContact.UserID = UserID;
+            var Res = await _contactRepository.CreateContact(newContact);
+            if (Res > 0)
             {
-                res.Data = ContactID;
-                res.Message = "201";
+                newContact.ID = Res;
 
-                if (req.Numbers != null && req.Numbers.Any())
-                {
-                    foreach (var number in req.Numbers)
-                    {
-                        number.OwnerID = ContactID;
-                        number.OwnerType = "Contact";
-                        bool numAdded = await _numberRepository.AddContactNumber(number);
-                        if (!numAdded)
-                        {
-                            Log.Error(
-                                $"userRequest id={req.UserID} unable to add number={number} for Contact ID={ContactID}"
-                            );
-                        }
-                    }
+                await _auditService.LogEvent(
+                    Res,
+                    "ContactService.CreateContact()",
+                    "Contact",
+                    $"Contact {Res} successfully created by user {UserID}"
+                );
 
-                    await _auditor.LogEvent(
-                        req.UserID,
-                        "Create Contact",
-                        "User",
-                        $"New Contact created for user ID={req.UserID}, ContactID={ContactID}"
-                    );
-                }
+                return _mapper.Map<GetContactModel>(newContact);
             }
-            else
-            {
-                res.Data = 0;
-                res.Message = "400";
-                res.Success = false;
-                res.Error = "Bad Request - Duplicate Contact.";
-            }
-            return res;
+            throw new Exception("Failed to add contact");
         }
 
-        public async Task<SvcResponse<string>> DeactivateContact(ContactDTO req)
+        public async Task<bool> DeactivateContact(int ContactID)
         {
-            var res = new SvcResponse<string>();
-            Contact? contactData = await _contactRepository.GetContactByID(req.ID);
-            if (contactData != null)
+            var contactDeactivated = await _contactRepository.DeactivateContact(ContactID);
+            if (!contactDeactivated)
             {
-                res.Data = "Contact has been successfully deactivated.";
-                res.Message = "200";
-                _ = _contactRepository.DeactivateContact(req.ID);
+                throw new Exception("Failed to delete contact");
             }
-            else
-            {
-                res.Success = false;
-                res.Error = "Bad Request - Contact does not exist!";
-                res.Message = "400";
-                res.Data = "Wrong password was entered";
-            }
-            return res;
+            await _auditService.LogEvent(
+                ContactID,
+                "ContactService.DeactivateContact()",
+                "Contact",
+                $"Contact {ContactID} successfully deactivated"
+            );
+
+            return contactDeactivated;
         }
 
-        public async Task<SvcResponse<IEnumerable<ContactDTO>>> GetAllContacts(int UserID)
+        public async Task<ICollection<GetContactModel>> GetUserContacts(int UserID)
         {
             var contacts = await _contactRepository.GetAllContacts(UserID);
-            foreach (var contact in contacts)
-            {
-                contact.Numbers = await _numberRepository.GetContactNumbers(OwnerID: contact.ID);
-            }
-            var res = new SvcResponse<IEnumerable<ContactDTO>>
-            {
-                Data = contacts,
-                Error =
-                    !contacts.Any() || contacts is null ? "No contacts available in database" : "",
-                Message = "200"
-            };
-            return res;
+            return _mapper.Map<ICollection<GetContactModel>>(contacts);
         }
 
-        public async Task<SvcResponse<string>> UpdateContact(ContactDTO req)
+        public async Task<GetContactModel> GetUserContact(int ContactID)
         {
-            var res = new SvcResponse<string>();
-            var taskSuccess = await _contactRepository.UpdateContact(req);
-            if (taskSuccess)
+            var contact = await _contactRepository.GetContactByID(ContactID);
+            if (contact == null)
+                throw new Exception("Contact not found");
+            return _mapper.Map<GetContactModel>(contact);
+        }
+
+        public async Task<GetContactModel> UpdateContact(int ContactID, UpsertContactModel Req)
+        {
+            var contact = await _contactRepository.GetContactByID(ContactID);
+            if (contact == null)
             {
-                if (req.Numbers != null && req.Numbers.Any())
-                {
-                    // TODO
-                    // CHECK NUMBERS IF A NEW NUMBER IS INCLUDED
-                    // IF ANY NUMBER DOES NOT EXIST IN THE DATABASE
-                    // WHICH MEANS IT HAS A NO ID WHEN IT SENT
-                    // CREATE A NEW ENTRY IN DATABASE
-                    foreach (var number in req.Numbers)
-                    {
-                        bool numUpdated = await _numberRepository.UpdateContactNumber(number);
-                        if (!numUpdated)
-                            Log.Error("$unable to update number");
-                    }
-                }
-                res.Data = "Contact updated successfully!";
-                res.Message = "201";
+                throw new Exception("Contact not found");
             }
-            else
-            {
-                res.Success = false;
-                res.Message = "400";
-                res.Error = "Bad Request - Something went wrong";
-            }
+
+            var updateRequest = _mapper.Map<Contact>(Req);
+            var contactUpdated = await _contactRepository.UpdateContact(contact, updateRequest);
+            if (!contactUpdated)
+                throw new Exception("Failed to update contact");
+
+            var res = _mapper.Map<GetContactModel>(updateRequest);
+            res.ID = ContactID;
+
+            await _auditService.LogEvent(
+                ContactID,
+                "ContactService.UpdateContact",
+                "Contact",
+                $"Contact {ContactID} successfully updated"
+            );
+
             return res;
         }
     }

@@ -1,10 +1,13 @@
+using contactManagerAPI.Models.ContactModels;
+
 namespace contactManagerAPI.Services.ContactServices
 {
     public interface IContactService
     {
-        Task<SvcResponse<int>> CreateContact(ContactDTO req);
-        Task<SvcResponse<string>> DeactivateContact(ContactDTO req);
-        Task<SvcResponse<string>> UpdateContact(ContactDTO req);
-        Task<SvcResponse<IEnumerable<ContactDTO>>> GetAllContacts(int UserID);
+        Task<GetContactModel> CreateContact(int UserID, UpsertContactModel Req);
+        Task<bool> DeactivateContact(int ContactID);
+        Task<GetContactModel> UpdateContact(int ContactID, UpsertContactModel Req);
+        Task<ICollection<GetContactModel>> GetUserContacts(int UserID);
+        Task<GetContactModel> GetUserContact(int ContactID);
     }
 }

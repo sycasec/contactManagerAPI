@@ -1,4 +1,5 @@
 using contactManagerAPI.Data;
+using contactManagerAPI.Entities;
 
 namespace contactManagerAPI.Services.AuditServices {
     public class AuditService : IAuditService {

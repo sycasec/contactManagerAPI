@@ -1,108 +1,51 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Logging;
-using contactManagerAPI.Services.AuthServices;
-using System.Security.Claims;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.AspNetCore.Authorization;
+using contactManagerAPI.Models.AuthModels;
 
 namespace contactManagerAPI.Controllers
 {
-    [Route("/api/[controller]")]
+    [Route("/api/auth")]
     [ApiController]
     public class AuthController : ControllerBase
     {
         private readonly ILogger<AuthController> _logger;
         private readonly IAuthService _authService;
-        private readonly IConfiguration _config;
 
-        public AuthController(
-            ILogger<AuthController> logger,
-            IAuthService aSvc,
-            IConfiguration config
-        )
+        public AuthController(ILogger<AuthController> logger, IAuthService aSvc)
         {
             _logger = logger;
             _authService = aSvc;
-            _config = config;
-        }
-
-        private string GenerateToken(UserAuthDTO user)
-        {
-            List<Claim> claims = new List<Claim>
-            {
-                user.EmailAddress is not null
-                    ? new Claim(ClaimTypes.Email, user.EmailAddress)
-                    : new Claim(ClaimTypes.Name, user.Username!)
-            };
-
-            SymmetricSecurityKey key =
-                new(Encoding.UTF8.GetBytes(_config.GetSection("JwtSettings:Key").Value!));
-
-            SigningCredentials credentials = new(key, SecurityAlgorithms.HmacSha512Signature);
-
-            JwtSecurityToken token =
-                new(
-                    claims: claims,
-                    expires: DateTime.Now.AddDays(1),
-                    signingCredentials: credentials
-                );
-
-            string JWTtoken = new JwtSecurityTokenHandler().WriteToken(token);
-            return JWTtoken;
-        }
-
-        [HttpGet("All")]
-        public async Task<ActionResult<SvcResponse<IEnumerable<UserDTO>>>> GetAllUsers()
-        {
-            var res = await _authService.GetAllUsers();
-            return Ok(res);
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<SvcResponse<int>>> Login(UserAuthDTO req)
+        [Produces("application/json")]
+        public async Task<ActionResult> Login([FromBody] LoginModel req)
         {
-            var res = await _authService.AuthenticateUser(req);
-            if (res.Success)
+            try
             {
+                var res = await _authService.UserLogin(req);
                 return Ok(res);
             }
-            return BadRequest(res);
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while attempting to sign in.");
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("register")]
-        public async Task<ActionResult<SvcResponse<string>>> Register(UserDTO req)
+        [Produces("application/json")]
+        public async Task<ActionResult> Register([FromBody] RegisterModel req)
         {
-            var res = await _authService.CreateUser(req);
-            if (res.Success)
+            try
             {
+                var res = await _authService.UserRegister(req);
                 return Ok(res);
             }
-            return BadRequest(res);
-        }
-
-        [HttpPut("update")]
-        public async Task<ActionResult<SvcResponse<string>>> Update(UserDTO req)
-        {
-            var res = await _authService.UpdateUser(req);
-            if (res.Success)
+            catch (Exception e)
             {
-                return Ok(res);
+                _logger.LogError(e, "Error occurred while attempting to register user.");
+                return Problem(e.Message);
             }
-            return BadRequest(res);
-        }
-
-        [HttpDelete("delete")]
-        public async Task<ActionResult<SvcResponse<string>>> Deactivate(UserAuthDTO req)
-        {
-            var res = await _authService.DeactivateUser(req);
-            if (res.Success)
-            {
-                return Ok(res);
-            }
-            return BadRequest(res);
         }
     }
 }

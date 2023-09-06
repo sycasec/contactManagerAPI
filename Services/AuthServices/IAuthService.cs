@@ -1,13 +1,12 @@
-using contactManagerAPI.DTO;
+using contactManagerAPI.Models.AuthModels;
+using contactManagerAPI.Models.UserModels;
 
 namespace contactManagerAPI.Services.AuthServices
 {
     public interface IAuthService
     {
-        Task<SvcResponse<int>> AuthenticateUser(UserAuthDTO req);
-        Task<SvcResponse<string>> CreateUser(UserDTO req);
-        Task<SvcResponse<string>> DeactivateUser(UserAuthDTO req);
-        Task<SvcResponse<string>> UpdateUser(UserDTO req);
-        Task<SvcResponse<IEnumerable<UserDTO>>> GetAllUsers();
+        Task<bool> UserAlreadyExists(UserDetailsModel existRequest);
+        Task<string> UserLogin(LoginModel loginRequest);
+        Task<string> UserRegister(RegisterModel registerRequest);
     }
 }
